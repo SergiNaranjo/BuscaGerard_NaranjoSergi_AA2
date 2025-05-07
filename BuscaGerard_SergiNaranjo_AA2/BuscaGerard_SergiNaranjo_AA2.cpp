@@ -95,7 +95,7 @@ public:
     bool CanPass(int x, int y)
     {
         char c = Get(x, y);
-        return c == '.';
+        return c == '.' or c == '$';
     }
 
     void PrintView(int cx, int cy, char simbolCJ)
