@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\naran\\Desktop\\BuscaGerard_NaranjoSergi_AA2_1\\BuscaGerard_SergiNaranjo_AA2\\",
+  "WorkspaceRootPath": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\naran\\Desktop\\BuscaGerard_NaranjoSergi_AA2_1\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:BuscaGerard_SergiNaranjo_AA2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "BuscaGerard_SergiNaranjo_AA2.cpp",
-              "DocumentMoniker": "C:\\Users\\naran\\Desktop\\BuscaGerard_NaranjoSergi_AA2_1\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
+              "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
               "RelativeDocumentMoniker": "BuscaGerard_SergiNaranjo_AA2.cpp",
-              "ToolTip": "C:\\Users\\naran\\Desktop\\BuscaGerard_NaranjoSergi_AA2_1\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
+              "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
               "RelativeToolTip": "BuscaGerard_SergiNaranjo_AA2.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAAHAAAA",
+              "ViewState": "AgIAABABAAAAAAAAAAAAABsBAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-06T09:38:21.639Z",
               "EditorCaption": ""

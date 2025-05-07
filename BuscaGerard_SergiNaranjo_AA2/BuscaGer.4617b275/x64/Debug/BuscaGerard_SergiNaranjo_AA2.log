@@ -1,2 +1,3 @@
 ﻿  BuscaGerard_SergiNaranjo_AA2.cpp
-  BuscaGerard_SergiNaranjo_AA2.vcxproj -> C:\Users\naran\Desktop\BuscaGerard_NaranjoSergi_AA2_1\BuscaGerard_SergiNaranjo_AA2\x64\Debug\BuscaGerard_SergiNaranjo_AA2.exe
+C:\Users\gerar\OneDrive\Desktop\Projecte\BuscaGerard_NaranjoSergi_AA2\BuscaGerard_SergiNaranjo_AA2\BuscaGerard_SergiNaranjo_AA2.cpp(241,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  BuscaGerard_SergiNaranjo_AA2.vcxproj -> C:\Users\gerar\OneDrive\Desktop\Projecte\BuscaGerard_NaranjoSergi_AA2\BuscaGerard_SergiNaranjo_AA2\x64\Debug\BuscaGerard_SergiNaranjo_AA2.exe
