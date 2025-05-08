@@ -1,7 +1,8 @@
 #pragma once
 #include<iostream>
 
-class Map {
+class Map 
+{
 private:
     char** grid;
     int width, height;

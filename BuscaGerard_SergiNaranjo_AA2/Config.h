@@ -17,6 +17,5 @@ public:
     Config(const char* file);
 
     bool Load();
-   
 };
 

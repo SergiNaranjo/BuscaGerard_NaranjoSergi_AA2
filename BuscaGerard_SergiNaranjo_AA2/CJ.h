@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Pedestrian.h"
 #include <Windows.h>
+
 enum class Direction
 {
     UP,
@@ -12,7 +13,8 @@ enum class Direction
 };
 
 
-class CJ {
+class CJ 
+{
 private:
     int x, y;
     Direction dir;

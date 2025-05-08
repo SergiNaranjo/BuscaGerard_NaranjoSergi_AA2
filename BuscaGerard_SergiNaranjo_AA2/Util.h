@@ -1,4 +1,5 @@
 #pragma once
+
 const int MAPSIZEX = 60;
 const int MAPSIZEY = 20;
 

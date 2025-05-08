@@ -14,35 +14,71 @@ Config::Config(const char* file) : fileName(file)
 bool Config::Load()
 {
     std::ifstream fileStream(fileName);
+
     if (!fileStream.is_open())
     {
         return false;
     }
+
     std::string line;
 
-    if (std::getline(fileStream, line)) {
+    if (std::getline(fileStream, line)) 
+    {
         std::stringstream ss(line);
         std::string value;
-        if (std::getline(ss, value, ';')) mapSizeX = std::stoi(value);
-        if (std::getline(ss, value, ';')) mapSizeY = std::stoi(value);
+
+        if (std::getline(ss, value, ';'))
+        {
+            mapSizeX = std::stoi(value);
+        }
+
+        if (std::getline(ss, value, ';'))
+        {
+            mapSizeY = std::stoi(value);
+        }
     }
 
-    // Línea 2: peatones;peaje;dineroMax (Los Santos)
-    if (std::getline(fileStream, line)) {
+    
+    if (std::getline(fileStream, line)) 
+    {
         std::stringstream ss(line);
         std::string value;
-        if (std::getline(ss, value, ';')) numPedestrians[0] = std::stoi(value);
-        if (std::getline(ss, value, ';')) tollCost[0] = std::stoi(value);
-        if (std::getline(ss, value, ';')) maxMoneyFromKill[0] = std::stoi(value);
+
+        if (std::getline(ss, value, ';'))
+        {
+            numPedestrians[0] = std::stoi(value);
+        }
+
+        if (std::getline(ss, value, ';'))
+        {
+            tollCost[0] = std::stoi(value);
+        }
+
+        if (std::getline(ss, value, ';'))
+        {
+            maxMoneyFromKill[0] = std::stoi(value);
+        }
     }
 
-    // Línea 3: peatones;peaje;dineroMax (San Fierro)
-    if (std::getline(fileStream, line)) {
+    
+    if (std::getline(fileStream, line)) 
+    {
         std::stringstream ss(line);
         std::string value;
-        if (std::getline(ss, value, ';')) numPedestrians[1] = std::stoi(value);
-        if (std::getline(ss, value, ';')) tollCost[1] = std::stoi(value);
-        if (std::getline(ss, value, ';')) maxMoneyFromKill[1] = std::stoi(value);
+        if (std::getline(ss, value, ';'))
+        {
+            numPedestrians[1] = std::stoi(value);
+        }
+
+        if (std::getline(ss, value, ';'))
+        {
+            tollCost[1] = std::stoi(value);
+        }
+
+        if (std::getline(ss, value, ';'))
+        {
+            maxMoneyFromKill[1] = std::stoi(value);
+        }
     }
 
     fileStream.close();

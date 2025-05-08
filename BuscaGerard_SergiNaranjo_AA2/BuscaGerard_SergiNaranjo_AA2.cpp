@@ -10,7 +10,8 @@
 #include <iostream>
 
 
-int main() {
+int main() 
+{
     srand(time(NULL));
     Config config("config.txt");
     if (!config.Load()) return 1;
@@ -21,7 +22,8 @@ int main() {
     const int totalPeds = config.numPedestrians[0];
     Pedestrian* pedestrians = new Pedestrian[totalPeds];
 
-    for (int i = 0; i < totalPeds; i++) {
+    for (int i = 0; i < totalPeds; i++) 
+    {
         pedestrians[i].x = 1 + rand() % (config.mapSizeX / 3 - 2);
         pedestrians[i].y = 1 + rand() % (config.mapSizeY - 2);
         pedestrians[i].alive = true;
@@ -29,28 +31,37 @@ int main() {
         pedestrians[i].island = 0;
     }
 
-    while (true) {
-        if (GetAsyncKeyState(VK_ESCAPE)) break;
+    while (true) 
+    {
+        if (GetAsyncKeyState(VK_ESCAPE))
+        {
+            break;
+        }
 
         cj.Move(map);
         cj.TakeMoney(map, config.maxMoneyFromKill[0]);
 
-        if (GetAsyncKeyState(VK_SPACE)) {
+        if (GetAsyncKeyState(VK_SPACE)) 
+        {
             cj.Attack(pedestrians, totalPeds, map);
         }
 
-        for (int i = 0; i < totalPeds; i++) {
+        for (int i = 0; i < totalPeds; i++) 
+        {
             if (!pedestrians[i].alive) continue;
             pedestrians[i].Move(map, cj.GetX(), cj.GetY());
         }
 
-        for (int y = 0; y < config.mapSizeY; y++) {
-            for (int x = 0; x < config.mapSizeX; x++) {
+        for (int y = 0; y < config.mapSizeY; y++) 
+        {
+            for (int x = 0; x < config.mapSizeX; x++) 
+            {
                 if (map.Get(x, y) != '$') map.Clear(x, y);
             }
         }
 
-        for (int i = 0; i < totalPeds; i++) {
+        for (int i = 0; i < totalPeds; i++) 
+        {
             if (pedestrians[i].alive) map.Set(pedestrians[i].x, pedestrians[i].y, 'P');
         }
 

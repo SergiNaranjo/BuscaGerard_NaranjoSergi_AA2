@@ -1,7 +1,8 @@
 #pragma once
 #include "Map.h"
 
-struct Pedestrian {
+struct Pedestrian 
+{
     int x, y;
     bool alive = true;
     bool horitzontal = true;
