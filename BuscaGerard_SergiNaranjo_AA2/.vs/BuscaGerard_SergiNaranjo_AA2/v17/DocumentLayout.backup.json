@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Pedestrian.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:CJ.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:CJ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:BuscaGerard_SergiNaranjo_AA2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -11,28 +31,20 @@
       "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:CJ.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Config.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Pedestrian.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4617B275-10BF-49CF-9B84-E2F2127C8C02}|BuscaGerard_SergiNaranjo_AA2.vcxproj|solutionrelative:Car.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,108 +54,151 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pedestrian.cpp",
+              "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.cpp",
+              "RelativeDocumentMoniker": "Pedestrian.cpp",
+              "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.cpp",
+              "RelativeToolTip": "Pedestrian.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-05T14:36:22.221Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CJ.cpp",
+              "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.cpp",
+              "RelativeDocumentMoniker": "CJ.cpp",
+              "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.cpp",
+              "RelativeToolTip": "CJ.cpp",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAIoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-05T14:35:21.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Car.h",
+              "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Car.h",
+              "RelativeDocumentMoniker": "Car.h",
+              "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Car.h",
+              "RelativeToolTip": "Car.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-05T14:32:00.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Util.h",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Util.h",
               "RelativeDocumentMoniker": "Util.h",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Util.h",
               "RelativeToolTip": "Util.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T14:53:03.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "CJ.h",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.h",
               "RelativeDocumentMoniker": "CJ.h",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\CJ.h",
               "RelativeToolTip": "CJ.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T14:48:46.322Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Pedestrian.h",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.h",
               "RelativeDocumentMoniker": "Pedestrian.h",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Pedestrian.h",
               "RelativeToolTip": "Pedestrian.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T14:46:19.554Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Config.cpp",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.cpp",
               "RelativeDocumentMoniker": "Config.cpp",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.cpp",
               "RelativeToolTip": "Config.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T14:41:08.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.h",
               "RelativeToolTip": "Map.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T14:39:22.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Config.h",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.h",
               "RelativeDocumentMoniker": "Config.h",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Config.h",
               "RelativeToolTip": "Config.h",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-08T14:35:19.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "BuscaGerard_SergiNaranjo_AA2.cpp",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
               "RelativeDocumentMoniker": "BuscaGerard_SergiNaranjo_AA2.cpp",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\BuscaGerard_SergiNaranjo_AA2.cpp",
               "RelativeToolTip": "BuscaGerard_SergiNaranjo_AA2.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-06T09:38:21.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.cpp",
               "RelativeDocumentMoniker": "Map.cpp",
               "ToolTip": "C:\\Users\\gerar\\OneDrive\\Desktop\\Projecte\\BuscaGerard_NaranjoSergi_AA2\\BuscaGerard_SergiNaranjo_AA2\\Map.cpp",
               "RelativeToolTip": "Map.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-08T14:40:09.13Z",
               "EditorCaption": ""

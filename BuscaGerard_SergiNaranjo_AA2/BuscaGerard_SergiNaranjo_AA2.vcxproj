@@ -134,6 +134,7 @@
     <ClCompile Include="Pedestrian.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Car.h" />
     <ClInclude Include="CJ.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Map.h" />

@@ -2,23 +2,23 @@
 #include <cstdlib>
 #include<Windows.h>
 
-Map::Map(int w, int h) : width(w), height(h) 
+Map::Map(int w, int h) : width(w), height(h)
 {
     grid = new char* [height];
 
-    for (int i = 0; i < height; i++) 
+    for (int i = 0; i < height; i++)
     {
         grid[i] = new char[width];
 
-        for (int j = 0; j < width; j++) 
+        for (int j = 0; j < width; j++)
         {
             grid[i][j] = '.';
         }
     }
 
-    for (int y = 0; y < height; y++) 
+    for (int y = 0; y < height; y++)
     {
-        if (y != height / 2) 
+        if (y != height / 2)
         {
             grid[y][width / 3] = 'X';
             grid[y][2 * width / 3] = 'X';
@@ -26,7 +26,7 @@ Map::Map(int w, int h) : width(w), height(h)
     }
 }
 
-Map::~Map() 
+Map::~Map()
 {
     for (int i = 0; i < height; i++)
     {
@@ -36,7 +36,7 @@ Map::~Map()
     delete[] grid;
 }
 
-char Map::Get(int x, int y) const 
+char Map::Get(int x, int y) const
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
     {
@@ -46,7 +46,7 @@ char Map::Get(int x, int y) const
     return ' ';
 }
 
-void Map::Set(int x, int y, char symbol) 
+void Map::Set(int x, int y, char symbol)
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
     {
@@ -54,7 +54,7 @@ void Map::Set(int x, int y, char symbol)
     }
 }
 
-void Map::Clear(int x, int y) 
+void Map::Clear(int x, int y)
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
     {
@@ -62,16 +62,16 @@ void Map::Clear(int x, int y)
     }
 }
 
-bool Map::CanPass(int x, int y) const 
+bool Map::CanPass(int x, int y) const
 {
     return Get(x, y) == '.' || Get(x, y) == '$';
 }
 
-void Map::DrawWalls() 
+void Map::DrawWalls()
 {
-    for (int y = 0; y < height; y++) 
+    for (int y = 0; y < height; y++)
     {
-        if (y != height / 2) 
+        if (y != height / 2)
         {
             grid[y][width / 3] = 'X';
             grid[y][2 * width / 3] = 'X';
@@ -79,12 +79,12 @@ void Map::DrawWalls()
     }
 }
 
-void Map::PrintView(int cx, int cy, char symbol, int viewX, int viewY) 
+void Map::PrintView(int cx, int cy, char symbol, int viewX, int viewY)
 {
     system("cls");
-    for (int dy = -viewY / 2; dy <= viewY / 2; dy++) 
+    for (int dy = -viewY / 2; dy <= viewY / 2; dy++)
     {
-        for (int dx = -viewX / 2; dx <= viewX / 2; dx++) 
+        for (int dx = -viewX / 2; dx <= viewX / 2; dx++)
         {
             int x = cx + dx;
             int y = cy + dy;

@@ -22,7 +22,7 @@ bool Config::Load()
 
     std::string line;
 
-    if (std::getline(fileStream, line)) 
+    if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;
@@ -38,8 +38,8 @@ bool Config::Load()
         }
     }
 
-    
-    if (std::getline(fileStream, line)) 
+
+    if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;
@@ -60,8 +60,8 @@ bool Config::Load()
         }
     }
 
-    
-    if (std::getline(fileStream, line)) 
+
+    if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;

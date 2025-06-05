@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 
-class Map 
+class Map
 {
 private:
     char** grid;
@@ -25,5 +25,3 @@ public:
     void PrintView(int cx, int cy, char symbol, int viewX, int viewY);
 
 };
-
-
