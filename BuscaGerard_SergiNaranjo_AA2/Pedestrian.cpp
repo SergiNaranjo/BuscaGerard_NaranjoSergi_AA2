@@ -27,3 +27,17 @@ void Pedestrian::Hurt()
     if (hits <= 0)
         alive = false;
 }
+
+void Pedestrian::SetAgressive()
+{
+    passive = false;
+}
+
+void Pedestrian::InmuneToRunOver()
+{
+    inmuneRunOver = true;
+}
+bool Pedestrian::GetInmuneToRunOver()
+{
+    return inmuneRunOver;
+}

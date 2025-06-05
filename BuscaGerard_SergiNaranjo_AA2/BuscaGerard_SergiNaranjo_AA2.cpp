@@ -33,6 +33,9 @@ int main()
         pedestrians[i].island = 0;
         pedestrians[i].PassiveOrAgressive();
     }
+    pedestrians[totalPeds -1].InmuneToRunOver();
+    pedestrians[totalPeds - 1].hits = 5;
+    pedestrians[totalPeds - 1].SetAgressive();
 
     for (int i = 0; i < totalCars; i++)
     {
@@ -82,7 +85,8 @@ int main()
 
         for (int i = 0; i < totalPeds; i++)
         {
-            if (pedestrians[i].alive) map.Set(pedestrians[i].x, pedestrians[i].y, 'P');
+            if (pedestrians[i].alive && !pedestrians[i].GetInmuneToRunOver()) map.Set(pedestrians[i].x, pedestrians[i].y, 'P');
+            else if (pedestrians[i].alive && pedestrians[i].GetInmuneToRunOver()) map.Set(pedestrians[i].x, pedestrians[i].y, 'B');
         }
 
         for (int i = 0; i < totalCars; i++)

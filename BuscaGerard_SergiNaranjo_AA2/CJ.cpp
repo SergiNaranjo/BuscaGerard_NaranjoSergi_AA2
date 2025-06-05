@@ -155,7 +155,7 @@ void CJ::RunOver(Pedestrian* peds, int num, Map& map)
 {
     for (int i = 0; i < num; i++)
     {
-        if (peds[i].alive && abs(x - peds[i].x) + abs(y - peds[i].y) == 1 && transformedIntoCar)
+        if (peds[i].alive && abs(x - peds[i].x) + abs(y - peds[i].y) == 1 && transformedIntoCar && !peds[i].GetInmuneToRunOver())
         {
             peds[i].alive = false;
             map.Set(peds[i].x, peds[i].y, '$');

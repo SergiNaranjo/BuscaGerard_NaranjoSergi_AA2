@@ -26,6 +26,12 @@ Map::Map(int w, int h) : width(w), height(h)
     }
 }
 
+bool Map::CanPass(int x, int y) const
+{
+    return Get(x, y) == '.' || Get(x, y) == '$';
+}
+
+
 Map::~Map()
 {
     for (int i = 0; i < height; i++)
@@ -60,11 +66,6 @@ void Map::Clear(int x, int y)
     {
         grid[y][x] = '.';
     }
-}
-
-bool Map::CanPass(int x, int y) const
-{
-    return Get(x, y) == '.' || Get(x, y) == '$';
 }
 
 void Map::DrawWalls()
