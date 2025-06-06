@@ -7,5 +7,7 @@ private:
 public:
 	void Menu();
 	int GetStarted();
+	void SetStared(int startedValue);
+	void GameOver();
 };
 

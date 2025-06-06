@@ -64,7 +64,7 @@ int main()
         
         switch (island)
         {
-        case 0: pedestrians[i].hits = 1; break;
+        case 0: pedestrians[i].hits = 1; break; // Read from file
         case 1: pedestrians[i].hits = 2; break;
         case 2: pedestrians[i].hits = 3; break;
         }
@@ -108,7 +108,7 @@ int main()
             break;
         }
 
-        cj.Move(map);
+        cj.Move(map, mainMenu);
         cj.TakeMoney(map, config.maxMoneyFromKill[0]);
 
 
@@ -124,7 +124,7 @@ int main()
             cj.EnterCar(cars, totalCars, map);
         }
 
-        cj.GetAttacked(pedestrians, totalPeds);
+        cj.GetAttacked(pedestrians, totalPeds, mainMenu);
 
         for (int i = 0; i < totalPeds; i++)
         {
@@ -169,9 +169,11 @@ int main()
 
         map.PrintView(cj.GetX(), cj.GetY(), cj.GetSymbol(), 21, 11);
         std::cout << "Money: $" << cj.money << "  Health: " << cj.GetHealth() << std::endl;
+        if (cj.GetHealth() == 0)
+            mainMenu.SetStared(3);
         Sleep(100);
     }
-
+    
     delete[] pedestrians;
     return 0;
 }

@@ -1,10 +1,12 @@
 ﻿#include "CJ.h"
 #include "Pedestrian.h"
 #include"Map.h"
+#include"Main_Menu_and_GameOver.h"
+
 
 CJ::CJ(int startX, int startY) : x(startX), y(startY), dir(Direction::DOWN) {}
 
-void CJ::Move(Map& map)
+void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
 {
     int nextX = x, nextY = y;
 
@@ -26,7 +28,8 @@ void CJ::Move(Map& map)
         }
         else
         {
-            std::cout << "No tienes suficiente dinero para cruzar. Fin del juego.\n";
+            gameOver.GameOver();
+            Sleep(5000);
             exit(0);
         }
     }
@@ -36,11 +39,11 @@ void CJ::Move(Map& map)
         {
             money -= tollCost;
             paidRightBorder = true;
-            std::cout << "Peaje pagado para cruzar a isla derecha.\n";
         }
         else
         {
-            std::cout << "No tienes suficiente dinero para cruzar. Fin del juego.\n";
+            gameOver.GameOver();
+            Sleep(5000);
             exit(0);
         }
     }
@@ -57,7 +60,7 @@ void CJ::Attack(Pedestrian* peds, int num, Map& map)
         {
             peds[i].Hurt();
 
-            // Si murió tras recibir el golpe, poner $
+            
             if (!peds[i].alive)
             {
                 map.Set(peds[i].x, peds[i].y, '$');
@@ -139,7 +142,7 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
     }
 }
 
-void CJ::GetAttacked(Pedestrian* peds, int num) {
+void CJ::GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver) {
     for (int i = 0; i < num; i++) {
         if (!peds[i].alive || peds[i].passive || !peds[i].attackingCJ)
             continue;
@@ -149,21 +152,20 @@ void CJ::GetAttacked(Pedestrian* peds, int num) {
             double secondsSinceLastAttack = (double)(now - peds[i].lastAttackTime) / CLOCKS_PER_SEC;
 
             if (secondsSinceLastAttack >= 1.0) {
-                ReceiveDamage(10); // Daño fijo por ahora
+                ReceiveDamage(10, gameOver); // Daño fijo por ahora
                 peds[i].lastAttackTime = now;
             }
         }
     }
 }
 
-void CJ::ReceiveDamage(int amountOfDamage) {
+void CJ::ReceiveDamage(int amountOfDamage, MainMenuAndGameOver gameOver) {
     health -= amountOfDamage;
 
-    std::cout << "CJ recibió " << amountOfDamage << " de daño. Salud: " << health << "\n";
-
     if (health <= 0) {
-        std::cout << "CJ ha muerto.\n";
-        // exit(0); // opcional
+        gameOver.GameOver();
+        Sleep(5000);
+        exit(0);
     }
 }
 

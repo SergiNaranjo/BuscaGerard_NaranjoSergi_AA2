@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Pedestrian.h"
 #include "Car.h"
+#include "Main_Menu_and_GameOver.h"
 #include <Windows.h>
 
 enum class Direction
@@ -35,7 +36,7 @@ public:
 
     CJ(int startX, int startY);
 
-    void Move(Map& map);
+    void Move(Map& map, MainMenuAndGameOver gameOver);
 
     void Attack(Pedestrian* peds, int num, Map& map);
 
@@ -45,9 +46,9 @@ public:
 
     void RunOver(Pedestrian* peds, int num, Map& map);
 
-    void ReceiveDamage(int amountOfDamage);
+    void ReceiveDamage(int amountOfDamage, MainMenuAndGameOver gameOver);
 
-    void GetAttacked(Pedestrian* peds, int num);
+    void GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver);
 
     int GetHealth();
 
