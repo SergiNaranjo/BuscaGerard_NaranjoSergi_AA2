@@ -20,11 +20,13 @@ Config::Config(const char* file) : fileName(file)
 bool Config::Load()
 {
     std::ifstream fileStream(fileName);
-    if (!fileStream.is_open()) return false;
+    if (!fileStream.is_open())
+    {
+        return false;
+    }
 
     std::string line;
 
-    // Línea 1: Tamaño del mapa
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
@@ -35,7 +37,6 @@ bool Config::Load()
         mapSizeY = std::stoi(value);
     }
 
-    // Línea 2: Vida y ataque de CJ
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
@@ -46,7 +47,6 @@ bool Config::Load()
         cjAttack = std::stoi(value);
     }
 
-    // Línea 3: Costos de peaje
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
@@ -57,7 +57,6 @@ bool Config::Load()
         tollCost[1] = std::stoi(value);
     }
 
-    // Líneas 4-6: Datos de peatones
     for (int i = 0; i < 3; ++i)
     {
         if (std::getline(fileStream, line))

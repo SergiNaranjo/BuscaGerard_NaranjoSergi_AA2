@@ -13,9 +13,9 @@ public:
     int cjLife;
     int cjAttack;
 
-    int tollCost[2]; // [0] = San Fierro, [1] = Las Venturas
+    int tollCost[2];
 
-    int numPedestrians[3];        // 0: LS, 1: SF, 2: LV
+    int numPedestrians[3];
     int maxMoneyFromKill[3];
     int pedestrianLife[3];
     int pedestrianAttack[3];

@@ -3,23 +3,35 @@
 #include "Map.h"
 #include "Main_Menu_and_GameOver.h"
 
-CJ::CJ(int startX, int startY, int hp, int atk, int tollLeft, int tollRight)
-    : x(startX), y(startY), dir(Direction::DOWN),
-    health(hp), attack(atk),
-    tollCostLeft(tollLeft), tollCostRight(tollRight)
-{
+CJ::CJ(int startX, int startY, int hp, int atk, int tollLeft, int tollRight) : x(startX), y(startY), dir(Direction::DOWN),
+health(hp), attack(atk), tollCostLeft(tollLeft), tollCostRight(tollRight) {
 }
 
 void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
 {
     int nextX = x, nextY = y;
 
-    if (GetAsyncKeyState(VK_UP) & 0x8000) { nextY--; dir = Direction::UP; }
-    else if (GetAsyncKeyState(VK_DOWN) & 0x8000) { nextY++; dir = Direction::DOWN; }
-    else if (GetAsyncKeyState(VK_LEFT) & 0x8000) { nextX--; dir = Direction::LEFT; }
-    else if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { nextX++; dir = Direction::RIGHT; }
+    if (GetAsyncKeyState(VK_UP) & 0x8000)
+    {
+        nextY--; dir = Direction::UP;
+    }
+    else if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+    {
+        nextY++; dir = Direction::DOWN;
+    }
+    else if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+    {
+        nextX--; dir = Direction::LEFT;
+    }
+    else if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+    {
+        nextX++; dir = Direction::RIGHT;
+    }
 
-    if (!map.CanPass(nextX, nextY)) return;
+    if (!map.CanPass(nextX, nextY))
+    {
+        return;
+    }
 
     int mapW = map.GetWidth();
     if ((x == mapW / 3 - 1 && nextX == mapW / 3) && !paidLeftBorder)
@@ -69,7 +81,8 @@ void CJ::Attack(Pedestrian* peds, int num, Map& map)
             {
                 map.Set(peds[i].x, peds[i].y, '$');
             }
-            if (!peds[i].passive) {
+            if (!peds[i].passive)
+            {
                 peds[i].attackingCJ = true;
                 peds[i].lastAttackTime = clock();
             }
@@ -81,12 +94,16 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
 {
     if (transformedIntoCar)
     {
-        if (currentCar == nullptr) return;
+        if (currentCar == nullptr)
+        {
+            return;
+        }
 
         const int cx = x;
         const int cy = y;
 
-        const int offsets[4][2] = {
+        const int offsets[4][2] =
+        {
             {0, -1}, {0, 1}, {-1, 0}, {1, 0}
         };
 
@@ -112,7 +129,10 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
 
     for (int i = 0; i < totalCars; ++i)
     {
-        if (cars[i].entered) continue;
+        if (cars[i].entered)
+        {
+            continue;
+        }
 
         int dx = abs(x - cars[i].x);
         int dy = abs(y - cars[i].y);
@@ -135,7 +155,9 @@ void CJ::GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver)
     for (int i = 0; i < num; i++)
     {
         if (!peds[i].alive || peds[i].passive || !peds[i].attackingCJ)
+        {
             continue;
+        }
 
         if (abs(x - peds[i].x) + abs(y - peds[i].y) == 1)
         {
@@ -144,7 +166,7 @@ void CJ::GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver)
 
             if (secondsSinceLastAttack >= 1.0)
             {
-                ReceiveDamage(10, gameOver); // Puedes reemplazar 10 por el daño real del peatón si lo manejas por tipo
+                ReceiveDamage(10, gameOver);
                 peds[i].lastAttackTime = now;
             }
         }
@@ -218,4 +240,3 @@ char CJ::GetSymbol() const
         return '?';
     }
 }
-

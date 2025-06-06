@@ -27,27 +27,37 @@ Map::Map(int w, int h) : width(w), height(h)
 Map::~Map()
 {
     for (int i = 0; i < height; i++)
+    {
         delete[] grid[i];
+    }
+
     delete[] grid;
 }
 
 char Map::Get(int x, int y) const
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
+    {
         return grid[y][x];
+    }
+
     return ' ';
 }
 
 void Map::Set(int x, int y, char symbol)
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
+    {
         grid[y][x] = symbol;
+    }
 }
 
 void Map::Clear(int x, int y)
 {
     if (x >= 0 && x < width && y >= 0 && y < height)
+    {
         grid[y][x] = '.';
+    }
 }
 
 bool Map::CanPass(int x, int y) const
@@ -61,14 +71,22 @@ void Map::DrawWalls()
     for (int y = 0; y < height; y++)
     {
         if (y != height / 2)
+        {
             grid[y][width / 3] = 'X';
+        }
         else
+        {
             grid[y][width / 3] = 'T';
+        }
 
         if (y != height / 2)
+        {
             grid[y][2 * width / 3] = 'X';
+        }
         else
+        {
             grid[y][2 * width / 3] = 'T';
+        }
     }
 }
 

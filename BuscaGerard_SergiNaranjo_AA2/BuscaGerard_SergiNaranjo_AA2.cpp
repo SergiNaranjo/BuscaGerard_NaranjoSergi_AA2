@@ -7,6 +7,15 @@
 #include "Main_Menu_and_GameOver.h"
 #include "Car.h"  // Falta incluir Car.h, ya que usás Car
 
+#include "Config.h"
+#include "Map.h"
+#include "Pedestrian.h"
+#include "CJ.h"
+#include "Util.h"
+#include "Splash Screen.h"
+#include "Main_Menu_and_GameOver.h"
+#include "Car.h" 
+
 #include <ctime>
 #include <Windows.h>
 #include <cstdlib>
@@ -17,23 +26,26 @@ int main()
     srand(static_cast<unsigned>(time(NULL)));
 
     Config config("config.txt");
-    if (!config.Load()) return 1;
+    if (!config.Load())
+    {
+        return 1;
+    }
 
     Map map(config.mapSizeX, config.mapSizeY);
     CJ cj(5, config.mapSizeY / 2);
     SplashScreen splashScreen;
     MainMenuAndGameOver mainMenu;
 
-    const int totalCars = 5; // TODO: Cambiar para leer del config
+    const int totalCars = 5;
     const int totalPeds = config.numPedestrians[0];
 
     Pedestrian* pedestrians = new Pedestrian[totalPeds];
     Car* cars = new Car[totalCars];
 
-    // Inicializar peatones
     int perIsland = totalPeds / 3;
     int remainder = totalPeds % 3;
-    int islandOffsets[3] = {
+    int islandOffsets[3] =
+    {
         0,
         config.mapSizeX / 3,
         2 * config.mapSizeX / 3
@@ -57,18 +69,16 @@ int main()
 
         switch (island)
         {
-        case 0: pedestrians[i].hits = 1; break; // Leer de config si quieres
+        case 0: pedestrians[i].hits = 1; break;
         case 1: pedestrians[i].hits = 2; break;
         case 2: pedestrians[i].hits = 3; break;
         }
     }
 
-    // Peatón especial (último)
     pedestrians[totalPeds - 1].InmuneToRunOver();
     pedestrians[totalPeds - 1].hits = 5;
     pedestrians[totalPeds - 1].SetAgressive();
 
-    // Inicializar coches
     int carsPerIsland = totalCars / 3;
     int extra = totalCars % 3;
     int carIndex = 0;
@@ -84,7 +94,7 @@ int main()
             cars[carIndex].x = xStart + 1 + rand() % (xEnd - xStart - 2);
             cars[carIndex].y = 1 + rand() % (config.mapSizeY - 2);
             cars[carIndex].island = island;
-            cars[carIndex].entered = false;  // Inicializar estado
+            cars[carIndex].entered = false;
         }
     }
 
@@ -96,52 +106,66 @@ int main()
         while (true)
         {
             if (GetAsyncKeyState(VK_ESCAPE))
+            {
                 break;
+            }
 
             cj.Move(map, mainMenu);
             cj.TakeMoney(map, config.maxMoneyFromKill[0]);
 
             if (GetAsyncKeyState(VK_SPACE))
+            {
                 cj.Attack(pedestrians, totalPeds, map);
+            }
 
             cj.RunOver(pedestrians, totalPeds, map);
 
             if (GetAsyncKeyState(VK_SPACE))
+            {
                 cj.EnterCar(cars, totalCars, map);
+            }
 
             cj.GetAttacked(pedestrians, totalPeds, mainMenu);
 
-            // Mover peatones
             for (int i = 0; i < totalPeds; i++)
             {
-                if (!pedestrians[i].alive) continue;
+                if (!pedestrians[i].alive)
+                {
+                    continue;
+                }
+
                 pedestrians[i].Move(map, cj.GetX(), cj.GetY());
             }
 
-            // Limpiar dinero en el mapa (excepto los marcados)
             for (int y = 0; y < config.mapSizeY; y++)
             {
                 for (int x = 0; x < config.mapSizeX; x++)
                 {
                     if (map.Get(x, y) != '$')
+                    {
                         map.Clear(x, y);
+                    }
                 }
             }
 
-            // Colocar peatones en el mapa
             for (int i = 0; i < totalPeds; i++)
             {
                 if (pedestrians[i].alive && !pedestrians[i].GetInmuneToRunOver())
+                {
                     map.Set(pedestrians[i].x, pedestrians[i].y, 'P');
+                }
                 else if (pedestrians[i].alive && pedestrians[i].GetInmuneToRunOver())
+                {
                     map.Set(pedestrians[i].x, pedestrians[i].y, 'B');
+                }
             }
 
-            // Colocar coches en el mapa
             for (int i = 0; i < totalCars; i++)
             {
                 if (!cars[i].entered && cars[i].x >= 0 && cars[i].y >= 0)
+                {
                     map.Set(cars[i].x, cars[i].y, 'C');
+                }
             }
 
             map.DrawWalls();
@@ -151,7 +175,9 @@ int main()
             std::cout << "Money: $" << cj.money << "  Health: " << cj.GetHealth() << std::endl;
 
             if (cj.GetHealth() == 0)
+            {
                 mainMenu.SetStared(3);
+            }
 
             if (pedestrians[totalPeds - 1].hits == 0)
             {
