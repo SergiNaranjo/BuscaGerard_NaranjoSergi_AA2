@@ -130,16 +130,20 @@
     <ClCompile Include="BuscaGerard_SergiNaranjo_AA2.cpp" />
     <ClCompile Include="CJ.cpp" />
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="Main_Menu_and_GameOver.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Pedestrian.cpp" />
+    <ClCompile Include="Splash Screen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Big Smoke.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CJ.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="Main_Menu_and_GameOver.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Pedestrian.h" />
+    <ClInclude Include="Splash Screen.h" />
     <ClInclude Include="Util.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

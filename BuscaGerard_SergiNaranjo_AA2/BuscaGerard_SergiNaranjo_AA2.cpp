@@ -3,6 +3,8 @@
 #include "Pedestrian.h"
 #include "CJ.h"
 #include "Util.h"
+#include "Splash Screen.h"
+#include "Main_Menu_and_GameOver.h"
 
 #include <ctime>
 #include <Windows.h>
@@ -18,6 +20,8 @@ int main()
 
     Map map(config.mapSizeX, config.mapSizeY);
     CJ cj(5, config.mapSizeY / 2);
+    SplashScreen splashScreen;
+    MainMenuAndGameOver mainMenu;
 
     const int totalCars = 5; // CHANGE TO READ IT FROM CONFIG FILE
     const int totalPeds = config.numPedestrians[0];
@@ -93,7 +97,10 @@ int main()
         }
     }
 
-
+    splashScreen.PrintSplashScreen();
+    mainMenu.Menu();
+    
+    if(mainMenu.GetStarted() == 0)
     while (true)
     {
         if (GetAsyncKeyState(VK_ESCAPE))
