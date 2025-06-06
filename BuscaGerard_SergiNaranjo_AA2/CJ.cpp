@@ -1,10 +1,14 @@
 ﻿#include "CJ.h"
 #include "Pedestrian.h"
-#include"Map.h"
-#include"Main_Menu_and_GameOver.h"
+#include "Map.h"
+#include "Main_Menu_and_GameOver.h"
 
-
-CJ::CJ(int startX, int startY) : x(startX), y(startY), dir(Direction::DOWN) {}
+CJ::CJ(int startX, int startY, int hp, int atk, int tollLeft, int tollRight)
+    : x(startX), y(startY), dir(Direction::DOWN),
+    health(hp), attack(atk),
+    tollCostLeft(tollLeft), tollCostRight(tollRight)
+{
+}
 
 void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
 {
@@ -17,13 +21,12 @@ void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
 
     if (!map.CanPass(nextX, nextY)) return;
 
-    // Verificamos si está cruzando frontera
     int mapW = map.GetWidth();
     if ((x == mapW / 3 - 1 && nextX == mapW / 3) && !paidLeftBorder)
     {
-        if (money >= tollCost)
+        if (money >= tollCostLeft)
         {
-            money -= tollCost;
+            money -= tollCostLeft;
             paidLeftBorder = true;
         }
         else
@@ -36,9 +39,9 @@ void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
     }
     else if ((x == 2 * mapW / 3 - 1 && nextX == 2 * mapW / 3) && !paidRightBorder)
     {
-        if (money >= tollCost)
+        if (money >= tollCostRight)
         {
-            money -= tollCost;
+            money -= tollCostRight;
             paidRightBorder = true;
         }
         else
@@ -62,7 +65,6 @@ void CJ::Attack(Pedestrian* peds, int num, Map& map)
         {
             peds[i].Hurt();
 
-            
             if (!peds[i].alive)
             {
                 map.Set(peds[i].x, peds[i].y, '$');
@@ -81,15 +83,11 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
     {
         if (currentCar == nullptr) return;
 
-        // Buscar casilla libre adyacente al coche
         const int cx = x;
         const int cy = y;
 
         const int offsets[4][2] = {
-            {0, -1}, // arriba
-            {0, 1},  // abajo
-            {-1, 0}, // izquierda
-            {1, 0}   // derecha
+            {0, -1}, {0, 1}, {-1, 0}, {1, 0}
         };
 
         for (int i = 0; i < 4; ++i)
@@ -99,27 +97,19 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
 
             if (map.CanPass(nx, ny))
             {
-                // CJ se baja
                 x = nx;
                 y = ny;
-
-                // Coche reaparece en su antigua posición
                 currentCar->x = cx;
                 currentCar->y = cy;
                 currentCar->entered = true;
-
-                // CJ ya no está en coche
                 transformedIntoCar = false;
                 currentCar = nullptr;
                 return;
             }
         }
-
-        // No hay espacio para bajarse → no hacer nada
         return;
     }
 
-    // Entrar al coche si hay uno adyacente y sin usar
     for (int i = 0; i < totalCars; ++i)
     {
         if (cars[i].entered) continue;
@@ -129,14 +119,10 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
 
         if (dx + dy == 1)
         {
-            // Subirse al coche
             x = cars[i].x;
             y = cars[i].y;
-
             transformedIntoCar = true;
             currentCar = &cars[i];
-
-            // Ocultar coche temporalmente
             cars[i].x = -1;
             cars[i].y = -1;
             return;
@@ -144,27 +130,33 @@ void CJ::EnterCar(Car* cars, int totalCars, Map& map)
     }
 }
 
-void CJ::GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver) {
-    for (int i = 0; i < num; i++) {
+void CJ::GetAttacked(Pedestrian* peds, int num, MainMenuAndGameOver gameOver)
+{
+    for (int i = 0; i < num; i++)
+    {
         if (!peds[i].alive || peds[i].passive || !peds[i].attackingCJ)
             continue;
 
-        if (abs(x - peds[i].x) + abs(y - peds[i].y) == 1) {
+        if (abs(x - peds[i].x) + abs(y - peds[i].y) == 1)
+        {
             clock_t now = clock();
             double secondsSinceLastAttack = (double)(now - peds[i].lastAttackTime) / CLOCKS_PER_SEC;
 
-            if (secondsSinceLastAttack >= 1.0) {
-                ReceiveDamage(10, gameOver); // Daño fijo por ahora
+            if (secondsSinceLastAttack >= 1.0)
+            {
+                ReceiveDamage(10, gameOver); // Puedes reemplazar 10 por el daño real del peatón si lo manejas por tipo
                 peds[i].lastAttackTime = now;
             }
         }
     }
 }
 
-void CJ::ReceiveDamage(int amountOfDamage, MainMenuAndGameOver gameOver) {
+void CJ::ReceiveDamage(int amountOfDamage, MainMenuAndGameOver gameOver)
+{
     health -= amountOfDamage;
 
-    if (health <= 0) {
+    if (health <= 0)
+    {
         gameOver.GameOver();
         Sleep(5000);
         exit(0);
@@ -211,6 +203,7 @@ char CJ::GetSymbol() const
 {
     if (transformedIntoCar)
         return 'C';
+
     switch (dir)
     {
     case Direction::UP:
@@ -225,3 +218,4 @@ char CJ::GetSymbol() const
         return '?';
     }
 }
+

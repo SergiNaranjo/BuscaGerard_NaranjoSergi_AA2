@@ -1,83 +1,81 @@
 #include "Config.h"
 #include <fstream>
 #include <sstream>
+
 Config::Config(const char* file) : fileName(file)
 {
-    mapSizeX = 60;
-    mapSizeY = 20;
+    mapSizeX = mapSizeY = 0;
+    cjLife = cjAttack = 0;
 
-    numPedestrians[0] = numPedestrians[1] = 0;
-    tollCost[0] = tollCost[1] = 0;
-    maxMoneyFromKill[0] = maxMoneyFromKill[1] = 0;
+    for (int i = 0; i < 2; ++i) tollCost[i] = 0;
+    for (int i = 0; i < 3; ++i)
+    {
+        numPedestrians[i] = 0;
+        maxMoneyFromKill[i] = 0;
+        pedestrianLife[i] = 0;
+        pedestrianAttack[i] = 0;
+    }
 }
 
 bool Config::Load()
 {
     std::ifstream fileStream(fileName);
-
-    if (!fileStream.is_open())
-    {
-        return false;
-    }
+    if (!fileStream.is_open()) return false;
 
     std::string line;
 
+    // Línea 1: Tamaño del mapa
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;
-
-        if (std::getline(ss, value, ';'))
-        {
-            mapSizeX = std::stoi(value);
-        }
-
-        if (std::getline(ss, value, ';'))
-        {
-            mapSizeY = std::stoi(value);
-        }
+        std::getline(ss, value, ';');
+        mapSizeX = std::stoi(value);
+        std::getline(ss, value, ';');
+        mapSizeY = std::stoi(value);
     }
 
-
+    // Línea 2: Vida y ataque de CJ
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;
-
-        if (std::getline(ss, value, ';'))
-        {
-            numPedestrians[0] = std::stoi(value);
-        }
-
-        if (std::getline(ss, value, ';'))
-        {
-            tollCost[0] = std::stoi(value);
-        }
-
-        if (std::getline(ss, value, ';'))
-        {
-            maxMoneyFromKill[0] = std::stoi(value);
-        }
+        std::getline(ss, value, ';');
+        cjLife = std::stoi(value);
+        std::getline(ss, value, ';');
+        cjAttack = std::stoi(value);
     }
 
-
+    // Línea 3: Costos de peaje
     if (std::getline(fileStream, line))
     {
         std::stringstream ss(line);
         std::string value;
-        if (std::getline(ss, value, ';'))
-        {
-            numPedestrians[1] = std::stoi(value);
-        }
+        std::getline(ss, value, ';');
+        tollCost[0] = std::stoi(value);
+        std::getline(ss, value, ';');
+        tollCost[1] = std::stoi(value);
+    }
 
-        if (std::getline(ss, value, ';'))
+    // Líneas 4-6: Datos de peatones
+    for (int i = 0; i < 3; ++i)
+    {
+        if (std::getline(fileStream, line))
         {
-            tollCost[1] = std::stoi(value);
-        }
+            std::stringstream ss(line);
+            std::string value;
 
-        if (std::getline(ss, value, ';'))
-        {
-            maxMoneyFromKill[1] = std::stoi(value);
+            std::getline(ss, value, ';');
+            numPedestrians[i] = std::stoi(value);
+
+            std::getline(ss, value, ';');
+            maxMoneyFromKill[i] = std::stoi(value);
+
+            std::getline(ss, value, ';');
+            pedestrianLife[i] = std::stoi(value);
+
+            std::getline(ss, value, ';');
+            pedestrianAttack[i] = std::stoi(value);
         }
     }
 
