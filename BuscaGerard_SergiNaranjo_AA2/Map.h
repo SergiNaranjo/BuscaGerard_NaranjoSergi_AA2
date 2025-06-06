@@ -7,10 +7,14 @@ private:
     char** grid;
     int width, height;
 
+
 public:
     Map(int w, int h);
 
     ~Map();
+
+    int GetWidth() const { return width; }
+    int GetHeight() const { return height; }
 
     char Get(int x, int y) const;
 

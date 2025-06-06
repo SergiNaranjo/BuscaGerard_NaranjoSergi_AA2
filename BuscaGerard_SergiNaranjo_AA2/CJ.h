@@ -23,6 +23,9 @@ private:
     Car* currentCar = nullptr;
     bool transformedIntoCar = false;
     int health = 100;
+    bool paidLeftBorder = false;
+    bool paidRightBorder = false;
+    const int tollCost = 10;  // Costo del peaje (ajustable)
 
 
     clock_t lastTimeHit = 0;

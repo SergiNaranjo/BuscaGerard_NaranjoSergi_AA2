@@ -1,27 +1,52 @@
 ﻿#include "CJ.h"
 #include "Pedestrian.h"
+#include"Map.h"
 
 CJ::CJ(int startX, int startY) : x(startX), y(startY), dir(Direction::DOWN) {}
 
 void CJ::Move(Map& map)
 {
+    int nextX = x, nextY = y;
 
-    if (GetAsyncKeyState(VK_UP) & 0x8000 && map.CanPass(x, y - 1))
+    if (GetAsyncKeyState(VK_UP) & 0x8000) { nextY--; dir = Direction::UP; }
+    else if (GetAsyncKeyState(VK_DOWN) & 0x8000) { nextY++; dir = Direction::DOWN; }
+    else if (GetAsyncKeyState(VK_LEFT) & 0x8000) { nextX--; dir = Direction::LEFT; }
+    else if (GetAsyncKeyState(VK_RIGHT) & 0x8000) { nextX++; dir = Direction::RIGHT; }
+
+    if (!map.CanPass(nextX, nextY)) return;
+
+    // Verificamos si está cruzando frontera
+    int mapW = map.GetWidth();
+    if ((x == mapW / 3 - 1 && nextX == mapW / 3) && !paidLeftBorder)
     {
-        y--; dir = Direction::UP;
+        if (money >= tollCost)
+        {
+            money -= tollCost;
+            paidLeftBorder = true;
+        }
+        else
+        {
+            std::cout << "No tienes suficiente dinero para cruzar. Fin del juego.\n";
+            exit(0);
+        }
     }
-    else if (GetAsyncKeyState(VK_DOWN) & 0x8000 && map.CanPass(x, y + 1))
+    else if ((x == 2 * mapW / 3 - 1 && nextX == 2 * mapW / 3) && !paidRightBorder)
     {
-        y++; dir = Direction::DOWN;
+        if (money >= tollCost)
+        {
+            money -= tollCost;
+            paidRightBorder = true;
+            std::cout << "Peaje pagado para cruzar a isla derecha.\n";
+        }
+        else
+        {
+            std::cout << "No tienes suficiente dinero para cruzar. Fin del juego.\n";
+            exit(0);
+        }
     }
-    else if (GetAsyncKeyState(VK_LEFT) & 0x8000 && map.CanPass(x - 1, y))
-    {
-        x--; dir = Direction::LEFT;
-    }
-    else if (GetAsyncKeyState(VK_RIGHT) & 0x8000 && map.CanPass(x + 1, y))
-    {
-        x++; dir = Direction::RIGHT;
-    }
+
+    x = nextX;
+    y = nextY;
 }
 
 void CJ::Attack(Pedestrian* peds, int num, Map& map)

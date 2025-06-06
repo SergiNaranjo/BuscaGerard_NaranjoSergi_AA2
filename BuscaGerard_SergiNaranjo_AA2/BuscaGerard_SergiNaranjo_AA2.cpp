@@ -26,12 +26,44 @@ int main()
 
     for (int i = 0; i < totalPeds; i++)
     {
-        pedestrians[i].x = 1 + rand() % (config.mapSizeX / 3 - 2);
+        int thirdIslandXStart = 2 * config.mapSizeX / 3;
+        pedestrians[totalPeds - 1].x = thirdIslandXStart + rand() % (config.mapSizeX - thirdIslandXStart - 1);
+        pedestrians[totalPeds - 1].y = 1 + rand() % (config.mapSizeY - 2);
+        pedestrians[totalPeds - 1].island = 2;
+        pedestrians[i].PassiveOrAgressive();
+    }
+    int perIsland = totalPeds / 3;
+    int remainder = totalPeds % 3;
+
+    int islandOffsets[3] = {
+        0,
+        config.mapSizeX / 3,
+        2 * config.mapSizeX / 3
+    };
+
+    for (int i = 0; i < totalPeds; i++)
+    {
+        int island = i / perIsland;
+        if (island > 2) island = 2;
+
+        pedestrians[i].island = island;
+
+        int xStart = islandOffsets[island];
+        int xEnd = (island == 2) ? config.mapSizeX - 1 : islandOffsets[island + 1] - 1;
+
+        pedestrians[i].x = xStart + 1 + rand() % (xEnd - xStart - 1);
         pedestrians[i].y = 1 + rand() % (config.mapSizeY - 2);
         pedestrians[i].alive = true;
         pedestrians[i].horitzontal = rand() % 2;
-        pedestrians[i].island = 0;
         pedestrians[i].PassiveOrAgressive();
+
+        
+        switch (island)
+        {
+        case 0: pedestrians[i].hits = 1; break;
+        case 1: pedestrians[i].hits = 2; break;
+        case 2: pedestrians[i].hits = 3; break;
+        }
     }
     pedestrians[totalPeds -1].InmuneToRunOver();
     pedestrians[totalPeds - 1].hits = 5;
@@ -43,6 +75,24 @@ int main()
         cars[i].y = 1 + rand() % (config.mapSizeY - 2);
         cars[i].island = 0;
     }
+    int carsPerIsland = totalCars / 3;
+    int extra = totalCars % 3;
+
+    int carIndex = 0;
+    for (int island = 0; island < 3; island++)
+    {
+        int carsInThisIsland = carsPerIsland + (island < extra ? 1 : 0);
+        int xStart = island * config.mapSizeX / 3;
+        int xEnd = (island == 2) ? config.mapSizeX - 1 : (island + 1) * config.mapSizeX / 3 - 1;
+
+        for (int j = 0; j < carsInThisIsland && carIndex < totalCars; j++, carIndex++)
+        {
+            cars[carIndex].x = xStart + 1 + rand() % (xEnd - xStart - 2);
+            cars[carIndex].y = 1 + rand() % (config.mapSizeY - 2);
+            cars[carIndex].island = island;
+        }
+    }
+
 
     while (true)
     {
