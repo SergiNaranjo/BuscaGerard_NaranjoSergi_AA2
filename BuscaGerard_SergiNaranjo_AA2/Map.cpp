@@ -28,7 +28,8 @@ Map::Map(int w, int h) : width(w), height(h)
 
 bool Map::CanPass(int x, int y) const
 {
-    return Get(x, y) == '.' || Get(x, y) == '$';
+    char tile = Get(x, y);
+    return tile == '.' || tile == '$' || tile == 'T';
 }
 
 
@@ -72,11 +73,17 @@ void Map::DrawWalls()
 {
     for (int y = 0; y < height; y++)
     {
+        // Pared izquierda
         if (y != height / 2)
-        {
             grid[y][width / 3] = 'X';
+        else
+            grid[y][width / 3] = 'T'; 
+
+        // Pared derecha
+        if (y != height / 2)
             grid[y][2 * width / 3] = 'X';
-        }
+        else
+            grid[y][2 * width / 3] = 'T'; 
     }
 }
 

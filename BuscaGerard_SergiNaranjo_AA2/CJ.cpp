@@ -28,6 +28,7 @@ void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
         }
         else
         {
+            system("cls");
             gameOver.GameOver();
             Sleep(5000);
             exit(0);
@@ -42,6 +43,7 @@ void CJ::Move(Map& map, MainMenuAndGameOver gameOver)
         }
         else
         {
+            system("cls");
             gameOver.GameOver();
             Sleep(5000);
             exit(0);

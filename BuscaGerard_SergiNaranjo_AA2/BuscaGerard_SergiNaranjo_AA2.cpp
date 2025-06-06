@@ -171,6 +171,14 @@ int main()
         std::cout << "Money: $" << cj.money << "  Health: " << cj.GetHealth() << std::endl;
         if (cj.GetHealth() == 0)
             mainMenu.SetStared(3);
+
+        if (pedestrians[totalPeds - 1].hits == 0)
+        {
+            system("cls");
+            mainMenu.GameOver();
+            exit(0);
+        }
+
         Sleep(100);
     }
     
